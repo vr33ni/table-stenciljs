@@ -38,7 +38,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm install
       - run: npm ci
-      - run: npm run build:stencil
+      - run: npm run build:components
       - run: npm publish # the version has to be updated in the package.json before publishing a new package version
         env:
           NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
