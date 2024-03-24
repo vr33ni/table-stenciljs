@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
-    "@storybook/core-events": "^7.6.6"
+    "@storybook/core-events": "^7.6.6",
+    "auto": "^11.1.2"
   }
 }
