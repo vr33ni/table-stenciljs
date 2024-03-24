@@ -1,0 +1,65 @@
+import { Meta, Primary, Controls, Canvas, Story } from '@storybook/blocks';
+import * as TextFieldStories from './text-field.stories';
+ 
+<Meta of={TextFieldStories} />
+
+# Text field
+
+<Canvas of={TextFieldStories.Default} sourceState="shown" />
+
+## Props
+
+<Controls />
+
+## Events
+See the examples below for general usage of events in different JS frameworks.
+For more information, please refer to our example applications.
+
+<b>Angular</b>
+
+```js
+//app.component.js
+handleTextField(event: any) {
+  console.log("searchField value change: ", event.detail)
+}
+//app.component.html
+<text-field (myInput)="handleTextField($event)"></search-field>
+```
+
+<b>React</b>
+
+```js
+//MyComponent.js
+const handleText = (event) => {
+  console.log("handling input: ", event.detail)
+};
+...
+<MyTextField onMyInput={handleText}></MyTextField>
+```
+
+<b>Vanilla</b>
+
+```js
+//index.html
+const textField = document.querySelector('#text-field');
+textField.addEventListener('myInput', (event) => {
+  console.log("text field value", event.detail);
+});
+<text-field id="text-field"></text-field>
+```
+
+<b>Vue</b> (using v-model)
+
+```js
+//MyComponent.vue
+let textValue = ref('');
+...
+<text-field v-model="textValue"></text-field>
+```
+
+<b>Vue</b> (combining value binding and event listening)
+```js
+//MyComponent.vue
+<text-field @myInput="event => console.log(event.detail)">
+</text-field>
+```

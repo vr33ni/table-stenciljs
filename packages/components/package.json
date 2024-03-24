@@ -1,0 +1,95 @@
+{
+  "name": "@vr33ni/table-stenciljs",
+  "version": "20.46.3--canary.988.4047eb799dcb810e3db097cb5c1193fb8b675d41.0",
+  "private": false,
+  "description": "Stencil web component - Table",
+  "homepage": "https://vr33ni.github.io/",
+  "bugs": {
+    "url": "https://github.com/vr33ni/table-stenciljs/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/table-stenciljs/table-stenciljs.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "test": "stencil test --e2e",
+    "build:storybook": "npm run build:stencil && storybook build",
+    "build:stencil": "stencil build --docs",
+    "dev:stencil": "stencil build --serve --watch",
+    "watch:stencil": "stencil build  --watch",
+    "index": "stencil build --serve --watch --dev",
+    "dev": "run-p dev:stencil dev:storybook",
+    "dev:storybook": "wait-on ./dist && storybook dev -p 6262",
+    "storybook": "npm run dev"
+  },
+  "dependencies": {
+     "@popperjs/core": "^2.11.8",
+    "@stencil/core": "4.5.0",
+    "@storybook/blocks": "^7.0.23",
+    "@storybook/cli": "^7.0.20",
+    "babel-prettier-parser": "^0.10.8",
+    "classnames": "^2.3.2",
+    "i": "^0.3.7",
+    "npm": "^10.2.1",
+    "npm-run-all": "^4.1.5",
+    "prettier-standalone": "^1.3.1-0"
+  },
+  "peerDependencies": {
+    "@floating-ui/dom": "^1.4.5",
+    "ag-grid-community": "^31.0.3",
+    "choices.js": "^10.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@stencil/angular-output-target": "^0.8.2",
+    "@stencil/react-output-target": "^0.5.3",
+    "@stencil/sass": "^3.0.4",
+    "@stencil/vue-output-target": "^0.8.6",
+    "@storybook/addon-actions": "^7.0.20",
+    "@storybook/addon-docs": "^7.6.10",
+    "@storybook/addon-essentials": "^7.0.24",
+    "@storybook/addon-interactions": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/addon-mdx-gfm": "^7.0.20",
+    "@storybook/html": "^7.0.20",
+    "@storybook/html-webpack5": "^7.0.20",
+    "@storybook/manager-api": "^7.6.9",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "^7.6.9",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^20.9.0",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "jest": "^27.0.3",
+    "jest-cli": "^27.4.5",
+    "node-sass": "^9.0.0",
+    "puppeteer": "^21.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.70.0",
+    "sass-export": "^2.1.2",
+    "sass-loader": "^14.0.0",
+    "storybook": "^7.0.20",
+    "wait-on": "^7.2.0"
+  },
+  "license": "MIT",
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ]
+  }
+}

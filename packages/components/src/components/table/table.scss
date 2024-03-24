@@ -1,0 +1,190 @@
+
+
+@import "~ag-grid-community/styles/ag-grid.css";
+
+
+.sideBar-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.topBar-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-pagination-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; // stretches items to fill the container horizontally
+  width: 100%; // ensures the wrapper takes up the full width of its parent
+}
+
+#table-wrapper {
+  flex: 1; // allows the table to take up the remaining space
+}
+
+
+.table-wrapper .ag-root-wrapper-body {
+  height: auto !important;
+  min-height: 100px !important;
+  min-width: 100px;
+}
+
+.set-filter-wrapper {
+  margin-bottom: 8px;
+}
+
+.my-ag-grid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  min-width: 100px;
+  padding-bottom: 8px;
+}
+
+
+.my-ag-grid .ag-header-cell::after {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.my-ag-grid .ag-header-cell:focus {
+  outline: none !important;
+}
+
+.my-ag-grid *:not(.ag-header-cell):focus {
+  outline: none;
+}
+
+
+
+.ag-overlay-loading-center {
+  border: none;
+  background: none;
+  border-radius: none;
+  box-shadow: none;
+}
+
+
+.ag-root-wrapper {
+  border: none;
+}
+
+
+
+.ag-header {
+  background-color: lightgrey;
+  border-bottom: none;
+
+  &.ag-header-active {
+    outline: none !important;
+    border-color: #0A8276 !important;
+  }
+}
+
+.ag-header-cell {
+  padding-left: 16px;
+  padding-right: 16px;
+  gap: 4px;
+}
+
+
+.ag-header-cell-focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.ag-header-cell-text {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  color: black
+ 
+}
+
+.ag-row-focus {
+  background-color: inherit !important;
+  /* Reset the hover color to the row's original color */
+}
+
+.ag-row-hover {
+  background-color: white !important; //inherit !important;
+  /* Reset the hover color to the row's original color */
+}
+
+
+.ag-cell-focus {
+  border: none !important;
+  outline: none !important;
+  background-color: inherit !important;
+}
+
+
+
+.ag-row {
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  z-index: 1; //ensure the stacking order when used inside js frameworks
+}
+
+.ag-row-odd {
+  background-color: white;
+}
+
+.ag-cell {
+  display: flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+
+}
+
+
+.ag-ltr .ag-sort-indicator-icon {
+  padding-left: 0px;
+  vertical-align: bottom;
+  line-height: 12px;
+}
+
+.ag-sort-ascending-icon svg {
+  width: 12px; /* change width of the SVG */
+  height: 12px; /* change height of the SVG */
+}
+
+/* Styling the SVG's inner elements */
+.ag-sort-ascending-icon svg path {
+  fill: blue; /* change color of the SVG path */
+}
+
+
+.ag-sort-descending-icon svg {
+  width: 12px; /* change width of the SVG */
+  height: 12px; /* change height of the SVG */
+}
+
+/* Styling the SVG's inner elements */
+.ag-sort-descending-icon svg path {
+  fill: blue; /* change color of the SVG path */
+}
+
+
+.ag-sort-none-icon svg {
+  width: 12px; /* change width of the SVG */
+  height: 12px; /* change height of the SVG */
+}
+
+/* Styling the SVG's inner elements */
+.ag-sort-none-icon svg path {
+  fill: blue; /* change color of the SVG path */
+}
+
+.unsort-icon-custom-color {
+  color: grey;
+}

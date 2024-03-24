@@ -1,0 +1,28 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "list:packages": "lerna list --all",
+    "storybook": "lerna run storybook --scope @vr33ni/table-stenciljs",
+    "prebuild": "node build-utils/scripts/prebuild.js",
+    "build:components": "lerna run build:stencil --scope @vr33ni/table-stenciljs",
+    "test:components": "lerna run test --scope @vr33ni/table-stenciljs",
+    "build:storybook": "lerna run build:storybook --scope @vr33ni/table-stenciljs",
+    "test": "lerna run test --scope @vr33ni/table-stenciljs",
+    "graph": "nx graph"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "lerna": "^7.0.0",
+    "nx": "^16.2.1",
+    "typescript": "^5.0.4",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@storybook/core-events": "^7.6.6"
+  }
+}

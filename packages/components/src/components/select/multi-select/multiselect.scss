@@ -1,0 +1,250 @@
+
+.multiselect-container {
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+
+  &.small-select {
+    height: 36px;
+  }
+
+  &.medium-select {
+    height: 40px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+
+  .label-wrapper {
+    font-size: 16px;
+    line-height: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  .error-message-wrapper {
+    color: #CD002F;
+    font-size: 8px;
+    line-height: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  .multiselect-wrapper {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 1px;
+    width: 100%;
+    font-weight: 400;
+    font-style: normal;
+
+
+    &.small-select {
+      height: 36px;
+      padding: 8px 12px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+
+    &.medium-select {
+      height: 40px;
+      padding: 8px 16px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus-visible:not(.active):not(:active) {
+      outline: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid green;
+        border-radius: 2px;
+
+      }
+    }
+
+    &.disabled {
+      background: lightgrey;
+      color: #575352;
+      border-color: #575352;
+      cursor: not-allowed;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    &.error {
+      border-color: #CD002F;
+    }
+
+    &:hover:not(.focus, :focus) {
+      border-color: grey;
+    }
+
+    &.active {
+      border-color: green !important; // Active border color
+
+      & .icon-wrapper-up {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8px;
+      }
+
+      & .icon-wrapper-down {
+        display: none
+      }
+    }
+
+
+    & .icon-wrapper-up {
+      display: none;
+    }
+
+    & .icon-wrapper-down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 8px;
+    }
+
+    &.is-flipped {
+      .multiselect-dropdown-menu {
+        top: auto;
+        bottom: 100%;
+      }
+    }
+  }
+
+  .multiselect-input {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.placeholder {
+      opacity: 0.5;
+    }
+
+  }
+
+
+  .multiselect-icon-container {
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+  }
+
+
+  .clear-button {
+    margin-right: 8px; // Space between clear button and icons
+    display: flex;
+  }
+
+  .multiselect-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 2px;
+    background-color: #fff;
+    box-shadow: 0px 6px 9px 0px rgba(29, 29, 29, 0.10);
+    max-height: 300px;
+    /* Adjust based on your design */
+    overflow-y: auto;
+    z-index: var(--dynamic-z-index, 1); // Fallback to 1
+
+    .search-input {
+      // position: sticky;
+      // top: 0;
+      // z-index: 2;
+      width: 100%;
+      padding: 8px 16px;
+      font-size: 16px;
+      line-height: 16px;
+      font-style: normal;
+      font-weight: 400;
+      box-sizing: border-box;
+      background-color: white;
+      border: none;
+      border-bottom: 1px solid grey;
+
+      &:focus {
+        outline: none;
+        border: 1px solid green;
+      }
+
+      // Optional: Placeholder style
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  .option {
+    position: relative;
+    padding: 8px 16px;
+    gap: 8px;
+    align-items: center;
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+
+    &.small-select {
+      font-size: 12px;
+      line-height:  12px;
+    }
+
+    &.medium-select {
+      font-size: 16px;
+      line-height:16px;
+    }
+
+    &:hover {
+      background-color: lightgrey;
+    }
+
+    &:focus {
+      background-color: lightgrey;
+      outline: none;
+    }
+
+    &.is-highlighted {
+      background-color: lightgrey;
+      ;
+    }
+
+    &.selected {
+      // color: #0A8276;
+    }
+
+    &.sub-option {
+      padding-left: 30px;
+      /* or however much indentation you want */
+    }
+  }
+
+
+
+}

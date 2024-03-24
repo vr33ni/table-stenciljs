@@ -1,0 +1,146 @@
+
+
+:host {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+
+.checkbox__container {
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+ 
+    & .checkbox__wrapper {
+        display: flex;
+        position: relative; //needs to be added for the indeterminate state of the checkbox
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border: 1px solid #575352;
+        border-radius: 1px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        &.checkbox-m {
+            height: 36px;
+            width: 36px;
+        }
+
+
+        &.error {
+            border-color: #CD002F;
+        }
+
+        &:focus-visible {
+            border: 1px solid #575352;
+            outline: 2px solid #0A8276;
+            outline-offset: 2px;
+        }
+
+        &:hover {
+            background-color: #EEEDED;
+            border: 1px solid #575352;
+            border-radius: 1px;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        &.disabled {
+            background-color: #BFBBBB;
+            border-color: #BFBBBB;
+            border-radius: 1px;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        &.checked {
+            background-color: #0A8276;
+            border-radius: 1px;
+            border-color: transparent;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            color: white;
+
+            &.error {
+                background-color: #CD002F;
+            }
+
+            &:focus-visible {
+                border: 1px solid transparent;
+                outline: 2px solid #0A8276;
+                outline-offset: 2px;
+            }
+
+            &:hover {
+                background-color: #08665C;
+                border-radius: 1px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+
+            &.disabled {
+                background: #BFBBBB;
+                border-radius:  1px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+        }
+
+        &.indeterminate {
+            &:before {
+                content: "";
+                display: block;
+                width: 70%; // Adjust as needed for the width of the minus sign
+                height: 2px; // Adjust for thickness of the minus sign
+                background-color: #08665C; // Color of the minus sign
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+    }
+
+    & .label {
+        height: 16x;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        color: black;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        &.label-m {
+            height: 36px;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        &.disabled {
+            color: #BFBBBB;
+        }
+    }
+
+    & .checkbox__wrapper,
+    & .label {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+}
